@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Милые котики</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js "></script>
+    <script src="https://kit.fontawesome.com/3e2b3d0dcf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts/cats.js"></script>
+    <script src="scripts/api.js"></script>
+</head>
+<body>
+    <header>
+        <a href="" class="logo"><i class="fa-solid fa-paw fa-2x"></i> Милые котики</a>
+        <div class="header-btn">
+            <div class="login-popup btn">Войти</div>
+            <div class="logOut-btn btn">Выйти</div>
+            <a class="btn" href="" id="add"><i class="fa-regular fa-plus"></i></a>
+        </div>
+    </header>
+    <main>
+    </main>
+    <footer>
+        <span>©2022 Made by Kuchenko Dmitriy</span>
+        <nav>
+            <a href=""><i class="fa-brands fa-github"></i></a>
+            <a href=""><i class="fa-brands fa-vk"></i></a>
+            <a href=""><i class="fa-brands fa-telegram"></i></a>
+        </nav>
+    </footer>
+    <div class="popup-wrapper">
+        <div class="popup" id="popup-form">
+            <div class="popup-close btn"><i class="fa-solid fa-xmark"></i></div>
+            <h2>Добавить питомца</h2>
+            <form action="">
+                <div class="form-img"></div>
+                <input type="number" name="id" min="1" required placeholder="id">
+                <input type="number" name="age" placeholder="Возраст">
+                <input type="text" name="name" required placeholder="Имя">
+                <input type="number" name="rate" placeholder="Рейтинг (0-10)" min="0" max="10">
+                <textarea name="description" placeholder="Описание"></textarea>
+                <label>Любимчик <input type="checkbox" name="favourite" placeholder=""></label>
+                <input type="text" name="img_link" placeholder="Ссылка на фото">
+                <button type="submit">Добавить котика</button>
+            </form>
+        </div>
+        <div class="popup" id="popup-info"> 
+            <div onClick="closeInfoo()" class="popup-close close-info btn">Х</i></div>
+            <h2>Информация о коте</h2>
+            <p class="name-pet"></p>
+            <img class="info-img" alt="">
+            <p class="description-cat"></p>
+            <p class="rate"></p>
+            <p class="favourite"></p>
+            <p class="age-cat"></p>
+            <p class="id-cat"></p>
+            <div class="delete-btn btn">Удалить кота</div>
+            <div class="edit-btn btn">Изменить информаицю</div>
+        </div>
+        <div class="popup" id="popup-edit">
+                <div onClick="closeEdit()" class="popup-close close-info btn">Х</i></div>
+                <h2>Изменить информацию о питомце</h2>
+                <div class="form-img"></div>
+                <p class="id-cat-edit"></p>
+                <input type="number" name="age" placeholder="Возраст">
+                <input type="text" name="name" required placeholder="Имя">
+                <input type="number" name="rate" placeholder="Рейтинг (0-10)" min="0" max="10">
+                <textarea name="description" placeholder="Описание"></textarea>
+                <label>Любимчик <input type="checkbox" name="favourite" placeholder=""></label>
+                <input type="text" name="img_link" placeholder="Ссылка на фото">
+                <div class="put-cat btn" onclick="putCat()">Подтвердить изменение.</div>
+        </div>
+        <div class="popup" id="auth-popup">
+            <div class="close-login-popup"><i id="close-login-popop" class="btn">X</i></div>
+            <form id="auth-form" action="">
+                <label for="login">Ваш логин</label>
+                <input type="text" name="login">
+                <label for="password">Пароль</label>
+                <input type="text" name="password">
+            </form>
+            <div class="login-btn">
+                <div class="hint btn">Подсказка</div>
+                <div class="login btn">Войти</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="scripts/index.js"></script>
+</html>
